@@ -1,0 +1,41 @@
+#ifndef __IMU_H
+#define __IMU_H
+
+//#include "common.h"
+#include "stm32f4xx_hal.h"
+#include <math.h>
+#include "MPU6050.h"
+#include "mpu6500.h"
+
+#define M_PI  (float)3.1415926535
+
+//��������̬��������ⲿ�������
+extern volatile float IMU_Pitch,IMU_Roll,IMU_Yaw,ACC_Pitch,ACC_Roll,ACC_M_Yaw,SDK_Roll,SDK_Pitch,SDK_Yaw;	  //��λ ��
+extern volatile float Motion_Accx, Motion_Accy, Motion_Accxlast, Motion_Accylast, Motion_Velocity_X, Motion_Velocity_Y;//�˶����ٶ�
+extern volatile float Position_X,Position_Y;
+extern volatile float Velocity_x_now, Velocity_y_now,Velocity_x_last,Velocity_y_last;
+//�����ǵ������
+extern volatile float IMU_GYROx, IMU_GYROy, IMU_GYROz;	//��λ  ��ÿ��
+extern float acc_vector;  //��ǰ���ٶȸ�Ӧ��������  M/S^2��
+
+extern volatile float MPU6500_Pitch, MPU6500_Roll, MPU6500_Yaw;
+
+//Mini IMU AHRS �����API
+void IMU_init(void); //��ʼ��
+void IMU_getYawPitchRoll(float * ypr); //������̬  ��Ҫ���ڵ���
+//uint32_t micros(void);	//��ȡϵͳ�ϵ���ʱ��  ��λ us 
+void Initialize_Q(void);
+void Get_Motion_Acc(void);
+void Get_Motion_Velocity(void);
+void ACC_NewValue(void);
+float Acc_getAvg(float * buff, int size);
+void DJI_SDK_Attitude(void);
+void Get_Position(void);
+extern float invSqrt(float x);
+void Get_Velocity_bias(void);
+
+void mpu6050_get_rpy(void);
+
+#endif
+
+//------------------End of File----------------------------
