@@ -7,6 +7,7 @@
 #include "math_nb.h"
 #include "usart.h"
 #include <stdbool.h>
+#include "AHRS_states.h"
 
 #define MPU6500_CSH()  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, SET)
 #define MPU6500_CSL()  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_8, RESET)

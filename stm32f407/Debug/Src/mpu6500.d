@@ -32,6 +32,9 @@ Src/mpu6500.o: ../Src/mpu6500.c \
  /home/n52/code_test/stm32f407/Inc/spi.h \
  /home/n52/code_test/stm32f407/Inc/math_nb.h \
  /home/n52/code_test/stm32f407/Inc/usart.h \
+ /home/n52/code_test/stm32f407/Inc/AHRS_states.h \
+ /home/n52/code_test/stm32f407/Inc/AHRS_matrix.h \
+ /home/n52/code_test/stm32f407/Inc/AHRS_quat.h \
  /home/n52/code_test/stm32f407/Inc/delay.h
 
 /home/n52/code_test/stm32f407/Inc/mpu6500.h:
@@ -99,5 +102,11 @@ Src/mpu6500.o: ../Src/mpu6500.c \
 /home/n52/code_test/stm32f407/Inc/math_nb.h:
 
 /home/n52/code_test/stm32f407/Inc/usart.h:
+
+/home/n52/code_test/stm32f407/Inc/AHRS_states.h:
+
+/home/n52/code_test/stm32f407/Inc/AHRS_matrix.h:
+
+/home/n52/code_test/stm32f407/Inc/AHRS_quat.h:
 
 /home/n52/code_test/stm32f407/Inc/delay.h:

@@ -36,7 +36,8 @@ Src/AHRS_states.o: ../Src/AHRS_states.c \
  /home/n52/code_test/stm32f407/Inc/mpu6500.h \
  /home/n52/code_test/stm32f407/Inc/spi.h \
  /home/n52/code_test/stm32f407/Inc/math_nb.h \
- /home/n52/code_test/stm32f407/Inc/usart.h
+ /home/n52/code_test/stm32f407/Inc/usart.h \
+ /home/n52/code_test/stm32f407/Inc/AHRS_states.h
 
 /home/n52/code_test/stm32f407/Inc/AHRS_states.h:
 
@@ -113,3 +114,5 @@ Src/AHRS_states.o: ../Src/AHRS_states.c \
 /home/n52/code_test/stm32f407/Inc/math_nb.h:
 
 /home/n52/code_test/stm32f407/Inc/usart.h:
+
+/home/n52/code_test/stm32f407/Inc/AHRS_states.h:

@@ -346,8 +346,16 @@ void performAcclerationCalibration(uint8_t accMovementCalibrationThreshold)
 			// Calculate average, shift Z down by acc_1G and store values in EEPROM at end of calibration
 			mpu6500_acc_offset[X] = (a[X] + (CALIBRATING_ACC_CYCLES / 2)) / CALIBRATING_ACC_CYCLES;
 			mpu6500_acc_offset[Y] = (a[Y] + (CALIBRATING_ACC_CYCLES / 2)) / CALIBRATING_ACC_CYCLES;
-			mpu6500_acc_offset[Z] = (a[Z] + (CALIBRATING_ACC_CYCLES / 2)) / CALIBRATING_ACC_CYCLES - acc_1G;
+			mpu6500_acc_offset[Z] = (a[Z] + (CALIBRATING_ACC_CYCLES / 2)) / CALIBRATING_ACC_CYCLES;// - acc_1G;
 			//printf("x:%d,y:%d,z:%d dev:%f\n", mpu6500_acc_offset[X], mpu6500_acc_offset[Y], mpu6500_acc_offset[Z], dev);
+			gStateData.accel_ref_x = mpu6500_acc_offset[X] * 0.00006103515625L;
+			gStateData.accel_ref_y = mpu6500_acc_offset[Y] * 0.00006103515625L;
+			gStateData.accel_ref_z = mpu6500_acc_offset[Z] * 0.00006103515625L;
+
+			gSensorData.acc_zero_norm = sqrt(gStateData.accel_ref_x * gStateData.accel_ref_x + gStateData.accel_ref_y * gStateData.accel_ref_y + gStateData.accel_ref_z * gStateData.accel_ref_z);
+			gStateData.accel_ref_x /= gSensorData.acc_zero_norm;
+			gStateData.accel_ref_y /= gSensorData.acc_zero_norm;
+			gStateData.accel_ref_z /= gSensorData.acc_zero_norm;
 		}
 	}
     calibratingA--;
